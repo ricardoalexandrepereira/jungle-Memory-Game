@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jungle</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       
+        .intro{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+          
+        }
+        .intro img{
+            position: absolute;
+            
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+           
+        }
+        #text{
+            position: absolute;
+            color: white;
+            font-size: 5em;
+        }
+        .sec{
+            position: relative;
+            padding: 100px;
+        }
+       #liana{
+            
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 300px;
+            
+        }
+        #walpaper{
+            width: 90%;
+            height: 100%;
+        }
+        #label{
+         height: 110%;
+        }
+        #play{
+            position: absolute;
+            top:250px;
+            width: 40px;
+            height: 30px;
+            background-color: white;
+            color:black;
+            border: none;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            border-radius: 3px;
+        }
+        #logo{
+            position: absolute;
+            width: 400px;
+            height: 200px;
+            top: 120px;
+            
+        }
+       
+       /*jogo*/
+.section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(255, 0, 0, 0);
+    overflow: hidden;
+    background-image: url(imagens/second5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+.section::after{
+    content:'';
+    
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+   /* background:linear-gradient(to bottom, rgb(14, 13, 13),transparent);*/
+    background-image: url(imagens/Groupsecond.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    z-index: -5;
+    
+}
+       .game{
+        position: absolute;           
+        display: grid;
+        grid-template-columns: repeat(4,6rem);
+        grid-template-rows: repeat( 4,6rem);
+        grid-gap: .5rem;
+        perspective: 800px;
+    
+    
+}
+.card{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: rgba(0,0,0,0.2) 0px 5px 15px;
+}
+.face, .back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    backface-visibility: hidden;
+}
+h1{
+    color: aliceblue;
+    padding: 2rem;
+}
+.face{
+    transform: rotateY(180deg);
+    
+}
+.card.flip{
+    transform: rotateY(180deg);
+    perspective: 800px;
+}
+.bamboos{
+    
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            z-index: -5;
+}
+
+#bambooleft{
+    
+    position: absolute;
+    width: 30px;
+    height: 300px;
+    left:390px; 
+    top: 0;  
+}
+
+#bambooleft img{
+    width: 120px;
+    height:700px
+}
+
+#bambooright{
+    
+    position: absolute;
+    width: 30px;
+    height: 400px;
+    right:480px; 
+    top: 0;  
+}
+#bambooright img{
+    width: 120px;
+    height:700px
+}
+#bambootop{
+    position: absolute;
+    width: 700px;
+    height: 120px;
+    right:350px; 
+    top: 55px;    
+}
+    
+#bamboobottom{
+    position: absolute;
+    width: 700px;
+    height: 120px;
+    right:350px; 
+    bottom: 75px;    
+}
+
+
+
+
+
+    </style>
+    
+</head>
+<body>
+    <div class="intro">
+        <img src="imagens/ee.jpg" id="walpaper">
+        <img src="imagens/pngegg2.png" id="bg">
+        <img src="imagens/labell.png" id="label"></h2>
+        <img src="imagens/liana.png" id="liana">
+        
+        <img src="imagens/right.png" id="right">
+        <img src="imagens/left.png" id="left">
+        <img src="imagens/bottom.png" id="bottom">
+        <img src="imagens/top2.png" id="top"> 
+        <button id="play">play</button>
+        <img src="imagens/logo1.png" id="logo">
+
+        
+    
+        
+    </div>
+        <!--jogo -->
+    
+<section class="section">
+
+    <div class="game">
+        
+
+            <div class="card" data-name="img1">
+                <img src="imagens/animal1.png" class="face">
+                <img src="imagens/panda1.png" class="back">
+            </div>
+
+            <div class="card" data-name="img8">
+                <img src="imagens/animal8.png" class="face">
+                <img src="imagens/panda1.png" class="back">
+            </div>
+    
+            <div class="card" data-name="img6">
+                <img src="imagens/animal6.png" class="face">
+                <img src="imagens/panda1.png" class="back">
+            </div>
+    
+            <div class="card" data-name="img2">
+                <img src="imagens/animal2.png" class="face">
+                <img src="imagens/panda1.png" class="back">
+            </div>
+    
+            <div class="card" data-name="img8">
+                <img src="imagens/animal8.png" class="face">
+                <img src="imagens/panda1.png" class="back">
+            </div>
+            
+    
+            <div class="card" data-name="img4">
+                <img src="imagens/animal4.png" class="face">
+                <img src="imagens/panda1.png" class="back">
+            </div>
+
+            <div class="card" data-name="img7">
+                <img src="imagens/animal7.png" class="face">
+                <img src="imagens/panda1.png" class="back">
+            </div>
+            
+            <div class="card" data-name="img5">
+                <img src="imagens/animal5.png" class="face">
+                <img src="imagens/panda1.png" class="back">
+            </div>
+            
+            <div class="card" data-name="img4">
+                <img src="imagens/animal4.png" class="face">
+                <img src="imagens/panda1.png" class="back">
+            </div>
+            
+            
+            <div class="card" data-name="img1">
+                <img src="imagens/animal1.png" class="face">
+                <img src="imagens/panda1.png" class="back">
+            </div>
+            
+            <div class="card" data-name="img6">
+                <img src="imagens/animal6.png" class="face">
+                <img src="imagens/panda1.png" class="back">
+            </div>
+            
+            <div class="card" data-name="img5">
+                <img src="imagens/animal5.png" class="face">
+                <img src="imagens/panda1.png" class="back">
+            </div>
+            
+
+            <div class="card" data-name="img9">
+                <img src="imagens/animal3.png" class="face">
+                <img src="imagens/panda1.png" class="back">
+            </div>
+            
+            <div class="card" data-name="img7">
+                <img src="imagens/animal7.png" class="face">
+                <img src="imagens/panda1.png" class="back">
+            </div>
+            
+            
+            
+            <div class="card" data-name="img2">
+                <img src="imagens/animal2.png" class="face">
+                <img src="imagens/panda1.png" class="back">
+            </div>
+    
+            <div class="card" data-name="img9">
+                <img src="imagens/animal3.png" class="face">
+                <img src="imagens/panda1.png" class="back">
+            </div>
+    
+        </div>
+
+    <div class="bamboos">
+
+        <div id="bambooleft">
+            <img src="imagens/imgleft.png" >
+        </div>
+        
+        <div id="bambooright">
+            <img src="imagens/imgright.png" >
+        </div>
+        
+        <div id="bambootop">
+            <img src="imagens/imgtop.png" >
+        </div>
+        
+        <div id="bamboobottom">
+            <img src="imagens/imgbottom.png" >
+        </div>
+        
+        </div>
+    
+</section>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" integrity="sha512-5efjkDjhldlK+BrHauVYJpbjKrtNemLZksZWxd6Wdxvm06dceqWGLLNjZywOkvW7BF032ktHRMUOarbK9d60bg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+ let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger:'.intro',
+                start:'0%',
+                end:'150%',
+                
+               // markers:true,
+                scrub:true,
+                pin:true
+            }
+        })
+
+        tl.fromTo('#top', {y: 0}, {y:-550 , duration:3},"-=2")
+        tl.fromTo('#bottom',{ y:0}, { y:600 ,duration:3},"-=2")
+        tl.fromTo('#right',{x: 0}, {x:750,duration:4},"-=2")
+        tl.fromTo('#left',{x: 0}, {x:-750,duration:4},"-=2")
+        
+        tl.fromTo('#liana',{y:0},{y:-200, duration:4},)
+        tl.to('#walpaper',{scale:1.3 , duration:6},"-=6")
+        
+        tl.to('#bg',{scale:1.1, duration:5},"<")
+        tl.fromTo('#label', {y:-600},{y:-10 , ease:"elastic.out(1, 0.9)",duration:6},"-=2")
+        tl.fromTo('#logo',{x:700,opacity:0},{x:0,opacity:1,duration:6, ease:"elastic.out(1, 0.9)"})
+
+        tl.fromTo('#play',{x:600, opacity:0} ,{x:0, opacity:0,duration:6})
+        tl.fromTo('#play',{x:0, opacity:0} ,{x:600, opacity:0,duration:6})
+
+        tl.fromTo('#logo',{x:0,opacity:1},{x:700,opacity:0,duration:6, ease:"elastic.in(1, 0.9)"},"-=2")
+        tl.fromTo('#label', {y:-10},{y:-600 , ease:"elastic.in(1, 0.9)",duration:6},"-=2")
+       
+
+        let tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger:'section',
+                start:'0%',
+                end:'100%',
+                
+               // markers:true,
+                scrub:true,
+                pin:true
+            }
+        })
+
+        tl2.fromTo('#bambooleft', {x:-700}, {x:0,ease:"elastic.out(1, 0.5)",duration:10})
+        tl2.fromTo('#bambooright', {x:700}, {x:0,ease:"elastic.out(1, 0.5)",duration:10})
+        tl2.fromTo('#bambootop', {y:-700}, {y:0,ease:"elastic.out(1, 0.5)",duration:10})
+        tl2.fromTo('#bamboobottom', {y:700}, {y:0,ease:"elastic.out(1, 0.5)",duration:10})
+        tl2.fromTo('.game', {y:800,opacity:0}, {y:0,opacity:1,ease:"elastic.out(1, 0.9)",duration:10})
+
+        
+        /*jogo*/
+
+        const cards = document.querySelectorAll('.card');
+        
+            
+        
+
+let isCardFlipped=false;
+let firstcard,secondcard;
+
+function flipcard(){
+    this.classList.toggle('flip')
+    if(!isCardFlipped){
+        isCardFlipped=true;
+        firstcard=this
+    }
+    else{
+        isCardFlipped=false;
+        secondcard=this;
+        if(firstcard.dataset.name===secondcard.dataset.name){
+            firstcard.removeEventListener('click',flipcard)
+            secondcard.removeEventListener('click',flipcard)
+           
+        }else{
+            setTimeout(() =>{
+                firstcard.classList.remove('flip')
+                secondcard.classList.remove('flip')
+            }, 1000)
+        }
+    }
+}
+
+cards.forEach((card) => {
+    card.addEventListener('click', flipcard)
+})
+</script>
+</body>
+</html>
